@@ -1,0 +1,87 @@
+@import url(../../assets/styles/palette.css);
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: red dashed 4px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1.2em;
+	background-color: #eeeeee;
+}
+body.is-404 {
+	background-color: var(--secondary--shade);
+	color: var(--primary);
+	font: 1.5em "Fontstuck", Courier, monospace;
+}
+
+/* Make all images crispy and tasty */
+img {
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+}
+
+.spacer {
+	margin-top: 10em;
+}
+#comic-panel {
+	height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#comic-image {
+	height: 100%;
+}
+.comic-text,
+#comic-title,
+#next,
+#side-nav {
+	padding: 4vh;
+}
+p {
+	padding: 1vh;
+}
+.comic-text {
+	width: 75%;
+}
+#next {
+	font-size: 1.5em;
+}
+#side-nav {
+	font-size: 0.8em;
+}
+
+.spinning {
+	animation: spin--hr 10s cubic-bezier(0.25, 0, 0.5, 1.01) 1;
+}
+.spinning--fast {
+	animation: spin--min 10s cubic-bezier(0.25, 0, 0.5, 1.05) 1;
+}
+
+@keyframes spin--hr {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-3600deg); /* 10 full rotations (360 * 10) */
+	}
+}
+@keyframes spin--min {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-21600deg); /* 60 full rotations (360 * 60) */
+	}
+}

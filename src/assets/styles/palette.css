@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "Fontstuck";
+	src: url("../fonts/fontstuck.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+:root {
+	--primary: #ff2106;
+	--primary--shade: #b70d0e;
+	--secondary: #510606;
+	--secondary--shade: #3c0404;
+	--accent: #ffc238;
+	--skin--shade: #d5d5d5;
+}
