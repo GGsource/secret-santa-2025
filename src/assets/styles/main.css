@@ -46,13 +46,34 @@ img {
 .comic-text,
 #comic-title,
 #next,
-#side-nav {
-	padding: 4vh;
+#side-nav,
+.comic-text-boxes,
+.dialogue-box,
+#worl-premie {
+	margin: 4vh;
 }
+
+.dialogue-box {
+	border: dashed 1px #808080;
+}
+
 p {
 	padding: 1vh;
 }
-.comic-text {
+
+.custom-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.dialogue-box {
+	text-align: left;
+	font-size: 0.8em;
+	width: 60%;
+}
+
+.comic-text,
+.comic-text-boxes {
 	width: 75%;
 }
 #next {
@@ -84,4 +105,38 @@ p {
 	to {
 		transform: rotate(-21600deg); /* 60 full rotations (360 * 60) */
 	}
+}
+
+/* Scrollable pages: allow natural height */
+body.scrollable-page {
+	height: auto;
+	min-height: 100%;
+}
+
+body.scrollable-page #comic-panel {
+	height: auto; /* Don't lock panel to 80% */
+	min-height: 80vh; /* But keep minimum size */
+}
+
+#worl-premie {
+	font-family: "Comic Sans MS";
+	font-size: 4em;
+	color: green;
+}
+
+#worl-premie,
+#next.fade-in {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 2s ease-in, visibility 0s 2s;
+}
+
+#worl-premie.show,
+#next.fade-in.show {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 2s ease-in, visibility 0s 0s;
+}
+#next.fade-in.show {
+	transition: opacity 5s ease-in, visibility 0s 0s;
 }

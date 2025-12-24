@@ -1,4 +1,5 @@
 import { pages, getNextPageTitle } from "./components/pages"; // Our pages' contents file
+import { attachPageListeners } from "./components/pageListeners";
 import "./assets/styles/main.css";
 
 function getPageNumber(): number {
@@ -14,6 +15,7 @@ function getPageNumber(): number {
 
 function render404(requested: number) {
 	document.body.classList.add("is-404"); // Style as 404 page
+	document.body.classList.remove("scrollable-page");
 
 	document.getElementById("comic-title")!.textContent = "Uh oh...";
 
@@ -48,6 +50,8 @@ function renderPage(pageNum: number) {
 	if (panel) {
 		panel.innerHTML = ""; // Clear previous content!
 
+		if (page.scrollable) document.body.classList.add("scrollable-page"); // Make it scrollable if marked such
+
 		if (page.customHTML) {
 			let customDiv = document.createElement("div");
 			customDiv.style.width = "100%";
@@ -79,6 +83,8 @@ function renderPage(pageNum: number) {
 		}
 	}
 
+	attachPageListeners();
+
 	const prev = document.getElementById("prev") as HTMLAnchorElement;
 	const next = document.getElementById("next") as HTMLAnchorElement;
 
@@ -86,6 +92,10 @@ function renderPage(pageNum: number) {
 	next.href = `/${pageNum + 1}`;
 
 	const nextTitle = getNextPageTitle(pageNum);
+
+	// Remove fade-in class first (in case coming from another page)
+	next.classList.remove("fade-in", "show");
+
 	if (nextTitle) {
 		next.textContent = nextTitle;
 
@@ -93,19 +103,32 @@ function renderPage(pageNum: number) {
 			next.style.opacity = "0";
 			next.style.visibility = "hidden";
 			next.style.transition = "opacity 2s ease-in";
-
 			setTimeout(() => {
 				next.style.visibility = "visible";
 				setTimeout(() => {
 					next.style.opacity = "1";
 				}, 10);
 			}, 9000);
+		} else if (pageNum === 7) {
+			// Start completely hidden
+			next.style.visibility = "hidden";
+			next.style.opacity = "0";
+			next.style.transition = "";
+
+			// Then add the fade-in class after a tiny delay
+			setTimeout(() => {
+				next.classList.add("fade-in");
+				next.style.opacity = "";
+				next.style.visibility = "";
+			}, 10);
 		} else {
+			// Normal pages - show immediately
 			next.style.opacity = "1";
 			next.style.visibility = "visible";
 			next.style.transition = "";
 		}
 	} else {
+		// No next page - hide it
 		next.style.visibility = "hidden";
 	}
 

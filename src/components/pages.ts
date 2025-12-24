@@ -1,15 +1,21 @@
 // Import the full on custom pages
-import page7HTML from "../pages/page_7.html?raw";
-
+import page7HTMLRaw from "../pages/page_7.html?raw";
 export type ComicPage = {
 	title: string;
 	image?: string;
 	customHTML?: string; // Raw HTML for complex layouts
 	text?: string | string[]; // Can be a single string or array of strings
+	scrollable?: boolean;
 };
 
 // Import all image types
 const images = import.meta.glob("../assets/images/*.{png,gif,webp}", {
+	eager: true,
+	import: "default",
+});
+
+// Import all audio types
+const audios = import.meta.glob("../assets/audio/*.{mp3,wav,ogg}", {
 	eager: true,
 	import: "default",
 });
@@ -25,6 +31,24 @@ for (const path in images) {
 	imageMap[fileName] = images[path] as string;
 }
 
+// Map filenames to simpler keys for audio
+const audioMap: Record<string, string> = {};
+for (const path in audios) {
+	const fileName = path
+		.split("/")
+		.pop()!
+		.replace(/\.(mp3|wav|ogg)$/, "");
+	audioMap[fileName] = audios[path] as string;
+}
+
+// Generic injection function injecting any assets into HTML content
+function injectAssets(html: string, assets: Record<string, string>): string {
+	return html.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+		return assets[key] || match;
+	});
+}
+
+// The page layouts
 export const pages: Record<number, ComicPage> = {
 	1: {
 		title: "==> IT KEEPS HAPPENING",
@@ -65,7 +89,16 @@ export const pages: Record<number, ComicPage> = {
 	},
 	7: {
 		title: "Quick recap",
-		customHTML: page7HTML,
+		customHTML: injectAssets(page7HTMLRaw, {
+			...imageMap,
+			...audioMap,
+		}),
+		scrollable: true,
+	},
+	8: {
+		title: "SBURB: Update 5.0",
+		image: imageMap["sburb"],
+		text: ["The new SBURB Update is dropping!", "Where were we?"],
 	},
 };
 
