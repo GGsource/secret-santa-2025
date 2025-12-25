@@ -20,22 +20,18 @@ function render404(requested: number) {
 	document.getElementById("comic-title")!.textContent = "Uh oh...";
 
 	document.getElementById("comic-panel")!.innerHTML = `
-	<div 
-	style = "
+	<div style = "
 	display:flex;
 	flex-direction:column;
 	align-items: center;
 	text-align: center;
-	"
-	>
+	">
 		<p>You attempt to access page ${requested}, but it does not exist.</p>
 		<p></p>
 		<p>Somehow, you've become lost.</p>
 		<p>You're... in the right place, but not at the right time...</p>
 		<p>I hope you can find your way back.</p>
 	</div>`;
-	const comicImage = document.getElementById("comic-image") as HTMLImageElement;
-	comicImage.style.display = "none";
 
 	const prev = document.getElementById("prev") as HTMLAnchorElement;
 	const next = document.getElementById("next") as HTMLAnchorElement;
