@@ -4,14 +4,12 @@ import "./assets/styles/main.css";
 
 function getPageNumber(): number {
 	const path = window.location.pathname;
-	console.log("Raw path:", path);
 
 	// "/" or "" → page 1
 	if (path === "/" || path === "") return 1;
 
 	// "/2" → 2
 	const num = parseInt(path.replace("/", ""), 10);
-	console.log("Parsed num:", num, "isNaN?", isNaN(num));
 	return isNaN(num) ? 1 : num;
 }
 
@@ -143,9 +141,5 @@ function renderPage(pageNum: number) {
 
 document.addEventListener("DOMContentLoaded", () => {
 	const pageNum = getPageNumber();
-	console.log("Current pathname:", window.location.pathname);
-	console.log("Parsed page number:", pageNum);
-	console.log("Page exists?", pages[pageNum]);
-	console.log("All pages:", Object.keys(pages));
 	renderPage(pageNum);
 });
