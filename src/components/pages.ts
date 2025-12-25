@@ -143,7 +143,7 @@ export const pages: Record<number, ComicPage> = {
 	},
 	13: {
 		title: "Skip the Boring Crap",
-		image: imageMap["Timer"],
+		image: imageMap["Timer_Passed"],
 		text: [
 			"Alright, enough of this. Let's skip to the good part.",
 			"You download the game, and you and your friends are transported to a glorious realm of gaming.",
