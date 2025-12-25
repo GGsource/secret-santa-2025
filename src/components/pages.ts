@@ -130,7 +130,59 @@ export const pages: Record<number, ComicPage> = {
 				</div>
             </div>
         `,
-		// TODO: Make a little copy thing for the free pulls code, which then has to be entered later when on the planet to redeem.
+	},
+	12: {
+		title: "Pog A Little",
+		image: imageMap["Red_Pog"],
+		text: [
+			"You pog a little.",
+			"It's a sweet freakin gaming code?!",
+			"5 free pulls... You can do so much with FIVE PULLS...",
+			"Yep. It's gaming time.",
+		],
+	},
+	13: {
+		title: "Skip the Boring Crap",
+		image: imageMap["Timer"],
+		text: [
+			"Alright, enough of this. Let's skip to the good part.",
+			"You download the game, and you and your friends are transported to a glorious realm of gaming.",
+			"WE GET IT. Let's cut to the interesting part.",
+		],
+	},
+	14: {
+		title: "The Interesting Part",
+		image: imageMap["LOBAS_1"],
+		customHTML: `
+			<div>
+				<img src="${imageMap["LOBAS_1"]}"/>
+				<p>You've arrived at the:</p>
+				<p class="planet-title">Land of Beams and Silicone</p>
+				<p>An awe inspiring urban-future world where opportunity and danger run side by side.</p>
+				<p> Hope finds its ways through the alleys despite all the odds.</p>
+            </div>
+        `,
+		scrollable: true,
+	},
+	15: {
+		title: "Except...",
+		image: imageMap["LOBAS_2"],
+		customHTML: `
+			<div>
+				<img src="${imageMap["LOBAS_2"]}"/>
+				<p>You're late to the party.</p>
+				<p>Perhaps that was what LOBAS once was but a lot of time has passed since then. Perhaps all of time.</p>
+				<p>You've arrived right at the tail end of this world as it crawls to its miserable death. This is the...</p>
+				<p class="planet-title">Land of Brass and Sand</p>
+				<p>Hope is just one of the many things that has run out of time on this world.</p>
+				<p>This land is hostile. But it's not just the land.</p>
+            </div>
+        `,
+		text: [],
+		scrollable: true,
+	},
+	16: {
+		title: "It's everything.",
 	},
 };
 

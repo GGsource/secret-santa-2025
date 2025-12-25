@@ -4,6 +4,12 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: "Rapscallion";
+	src: url("../fonts/Rapscallion.TTF");
+	font-weight: normal;
+	font-style: normal;
+}
 :root {
 	--primary: #ff2106;
 	--primary--shade: #b70d0e;

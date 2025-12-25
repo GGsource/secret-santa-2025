@@ -167,4 +167,9 @@ body.scrollable-page #comic-panel {
 	font-size: 2em;
 	border: 4px white dashed;
 	padding: 15px;
+	background-color: #808080a4;
+}
+.planet-title {
+	font-family: "Rapscallion";
+	font-size: 5em;
 }
