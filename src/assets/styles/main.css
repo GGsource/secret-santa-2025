@@ -151,3 +151,20 @@ body.scrollable-page #comic-panel {
 	color: #808080;
 	border-radius: 10px;
 }
+.code-box {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	object-fit: contain;
+	font-family: "Fontstuck";
+	color: cyan;
+}
+.redeem-label {
+	top: 35%;
+	font-size: 1em;
+}
+.code-contained {
+	font-size: 2em;
+	border: 4px white dashed;
+	padding: 15px;
+}

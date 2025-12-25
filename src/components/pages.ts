@@ -119,6 +119,17 @@ export const pages: Record<number, ComicPage> = {
 	},
 	11: {
 		title: "Get Some Friggin Sweet Loot...",
+		customHTML: `
+			<div style="position: relative; width: 100%; height: 100%;">
+				<img src="${imageMap["keighley_code"]}" alt="Base panel" style="width: 100%; height: 100%; object-fit: contain;" />
+				<div class="code-box redeem-label">
+					REDEMPTION CODE:
+				</div>
+				<div class="code-box code-contained">
+					KEIGHL-OVER-AND-DIE
+				</div>
+            </div>
+        `,
 		// TODO: Make a little copy thing for the free pulls code, which then has to be entered later when on the planet to redeem.
 	},
 };
