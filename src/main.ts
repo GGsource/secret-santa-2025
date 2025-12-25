@@ -19,21 +19,29 @@ function render404(requested: number) {
 
 	document.getElementById("comic-title")!.textContent = "Uh oh...";
 
-	document.getElementById("comic-image")!.textContent = `You attempt to access page ${requested}, but it does not exist.
-		<div class="spacer"></div>	
+	document.getElementById("comic-panel")!.innerHTML = `
+	<div 
+	style = "
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	text-align: center;
+	"
+	>
+		<p>You attempt to access page ${requested}, but it does not exist.</p>
+		<p></p>
 		<p>Somehow, you've become lost.</p>
-		<div class="spacer"></div>
 		<p>You're... in the right place, but not at the right time...</p>
-		<div class="spacer"></div>
-		<p>I hope you can find your way back.</p>`;
+		<p>I hope you can find your way back.</p>
+	</div>`;
 	const comicImage = document.getElementById("comic-image") as HTMLImageElement;
 	comicImage.style.display = "none";
 
 	const prev = document.getElementById("prev") as HTMLAnchorElement;
 	const next = document.getElementById("next") as HTMLAnchorElement;
 
-	prev.style.display = "none";
-	next.style.display = "none";
+	prev.style.visibility = "hidden";
+	next.style.visibility = "hidden";
 }
 
 function renderPage(pageNum: number) {
