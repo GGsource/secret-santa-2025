@@ -1,5 +1,7 @@
 // Import the full on custom pages
 import page7HTMLRaw from "../pages/page_7.html?raw";
+import page9HTMLRaw from "../pages/page_9.html?raw";
+import page10HTMLRaw from "../pages/page_10.html?raw";
 export type ComicPage = {
 	title: string;
 	image?: string;
@@ -51,7 +53,7 @@ function injectAssets(html: string, assets: Record<string, string>): string {
 // The page layouts
 export const pages: Record<number, ComicPage> = {
 	1: {
-		title: "==> IT KEEPS HAPPENING",
+		title: "IT KEEPS HAPPENING",
 		image: imageMap["1"],
 		text: "Yeag. I warned you bro.",
 	},
@@ -65,15 +67,15 @@ export const pages: Record<number, ComicPage> = {
 		customHTML: `
 		<img src="${imageMap["sip"]}" style="width: auto; height: auto; max-width: none; max-height: none;" />
 			`,
-		text: "removing progress",
+		text: "removing progress...",
 	},
 	4: {
-		title: "==>",
+		title: "Remove Progress",
 		image: imageMap["HS_Mage_Of_Time_OW_Sprite"],
 		text: "It's about time to erase all of these years of introspection and character growth. Tis a shame, if only that mouth knew when to keep shut! Maybe you wouldn't be in this situation 😔",
 	},
 	5: {
-		title: "Turn back time",
+		title: "Turn Back Time",
 		customHTML: `
             <div style="position: relative; width: 100%; height: 100%;">
                 <img src="${imageMap["Timer"]}" alt="Base panel" style="width: 100%; height: 100%; object-fit: contain;" />
@@ -83,7 +85,7 @@ export const pages: Record<number, ComicPage> = {
         `,
 	},
 	6: {
-		title: "That's about enough",
+		title: "That's About Enough",
 		image: imageMap["Red"],
 		text: ["Welcome back champ.", "Where were we?"],
 	},
@@ -98,7 +100,26 @@ export const pages: Record<number, ComicPage> = {
 	8: {
 		title: "SBURB: Update 5.0",
 		image: imageMap["sburb"],
-		text: ["The new SBURB Update is dropping!", "Where were we?"],
+		text: ["The new SBURB Update is dropping!", "Wown!", "Who could have forseen such a miraculous turn of events?!"],
+	},
+	9: {
+		title: "Check What's New",
+		image: imageMap["keighley_cam"],
+		customHTML: injectAssets(page9HTMLRaw, {
+			...imageMap,
+			...audioMap,
+		}),
+		scrollable: true,
+	},
+	10: {
+		title: "Lean In Closer For Geoff's Heartfelt Truth",
+		image: imageMap["keighley_contempt"],
+		customHTML: injectAssets(page10HTMLRaw, { ...imageMap, ...audioMap }),
+		scrollable: true,
+	},
+	11: {
+		title: "Get Some Friggin Sweet Loot...",
+		// TODO: Make a little copy thing for the free pulls code, which then has to be entered later when on the planet to redeem.
 	},
 };
 

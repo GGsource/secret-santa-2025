@@ -47,7 +47,7 @@ img {
 #comic-title,
 #next,
 #side-nav,
-.comic-text-boxes,
+.narration-box,
 .dialogue-box,
 #worl-premie {
 	margin: 4vh;
@@ -69,12 +69,12 @@ p {
 .dialogue-box {
 	text-align: left;
 	font-size: 0.8em;
-	width: 60%;
 }
 
 .comic-text,
-.comic-text-boxes {
-	width: 75%;
+.narration-box,
+.dialogue-box {
+	width: 35vw;
 }
 #next {
 	font-size: 1.5em;
@@ -139,4 +139,15 @@ body.scrollable-page #comic-panel {
 }
 #next.fade-in.show {
 	transition: opacity 5s ease-in, visibility 0s 0s;
+}
+#audio-play-button {
+	padding: 5px 15px;
+	font-family: "Fontstuck";
+	font-size: 0.8em;
+}
+.quote {
+	text-indent: 5em;
+	background-color: #c4c4c4;
+	color: #808080;
+	border-radius: 10px;
 }

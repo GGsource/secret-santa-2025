@@ -5,26 +5,19 @@ export function attachPageListeners() {
 		audioButton.addEventListener("click", () => {
 			const worlPremie = document.getElementById("worl-premie");
 			const nextButton = document.getElementById("next");
-			if (audioFile && worlPremie) {
+			if (audioFile) {
 				if (audioFile.paused) {
 					audioFile.play();
-					audioButton.textContent = "⏸️";
-					worlPremie.classList.add("show");
-					if (nextButton) {
-						nextButton.classList.add("show"); // Fade in next button too!
+					if (worlPremie) {
+						worlPremie.classList.add("show");
+						if (nextButton) {
+							nextButton.classList.add("show"); // Fade in next button too!
+						}
 					}
 				} else {
 					audioFile.pause();
-					audioButton.textContent = "▶️";
 				}
 			}
 		});
-
-		// Reset button when audio ends
-		if (audioFile) {
-			audioFile.addEventListener("ended", () => {
-				audioButton.textContent = "▶️";
-			});
-		}
 	}
 }
