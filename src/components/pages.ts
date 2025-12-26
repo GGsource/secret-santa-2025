@@ -283,6 +283,15 @@ export const pages: Record<number, ComicPage> = {
 		image: imageMap["hunter_5"],
 		scrollable: true,
 	},
+	32: {
+		title: "Swipe",
+		image: imageMap["swipe"],
+		scrollable: true,
+	},
+	33: {
+		title: "==>",
+		text: ["That's all. You will receive 7 games within the next several hours at 5 minute intervals. Good luck"],
+	},
 };
 
 export function getNextPageTitle(currentPage: number): string | null {
