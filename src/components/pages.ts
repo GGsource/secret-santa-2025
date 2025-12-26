@@ -183,6 +183,105 @@ export const pages: Record<number, ComicPage> = {
 	},
 	16: {
 		title: "It's everything.",
+		image: imageMap["Red_Owned"],
+	},
+	17: {
+		title: "==>",
+		image: imageMap["beast_needle"],
+		scrollable: true,
+	},
+	18: {
+		title: "==>",
+		image: imageMap["tiny_dancer_1"],
+	},
+	19: {
+		title: "==>",
+		image: imageMap["tiny_dancer_2"],
+	},
+	20: {
+		title: "==>",
+		image: imageMap["tiny_dancer_3"],
+	},
+	21: {
+		title: "Let's Jump Forward A Bit More",
+		image: imageMap["Timer_Passed"],
+		text: [
+			"You quickly learned to become proficient at one thing above all else:",
+			"Getting owned.",
+			"Day in and day out, new beasts would come to hunt you, and each time you would just barely manage to escape in the nick of time.",
+			"Eventually, you became accustomed to the struggle. Slowly, you learned to adapt.",
+		],
+	},
+	22: {
+		title: "Some Time Later: At The Market",
+		image: imageMap["merchants_2"],
+		text: [
+			"You've saved up after some time on this rock, and you're feeling your purse a bit heavy. So you've endeavored to purchase goods!",
+		],
+	},
+	23: {
+		title: "Buy Something",
+		image: imageMap["merchants"],
+		text: [
+			"How strange that these merchants don't have a shop table.",
+			"You ask the proper mole what wears he sells. He simply says nothing is for you.",
+			"The Swine in turn takes your valuables, and in return he pays you with knowledge.",
+		],
+	},
+	24: {
+		title: "Receive Enlightenment",
+		image: imageMap["merchants_3"],
+		text: [
+			"The swine does not open his snout, but he speaks into you all the same.",
+			"He tells you that time is up.",
+			"He tells you that he knows what you are.",
+			"He tells you that the Hunter has come from far away to find you, and this is the end of the road.",
+			"Time Abberations such as yourself are not welcome in this world, after all, your kind are why its fallen on such hard times.",
+		],
+	},
+	25: {
+		title: "Ask What a Time Abberation Is",
+		image: imageMap["merchants_3"],
+		text: [
+			"As you speak, you find the knowledge has already been deposited snugly between your neurons.",
+			"Time Abberations are what the citizens of LOBAS call creatures like yourself.",
+			"Creatures outside of this time, creatures that cause problems by existing here.",
+			"Creatures that need to be eradicated.",
+			"The Needle of the Dunes, the Leo of the Steppes, all the Beasts of Brass that roam this world, are caused by your kind.",
+		],
+	},
+	26: {
+		title: "Thankfully This World Is Protected",
+		text: [
+			"Thankfully there is something out there worse than you.",
+			"Thankfully it has found you.",
+			"The Time Hunter is here. Good luck.",
+		],
+	},
+	27: {
+		title: "==>",
+		image: imageMap["hunter_1"],
+		scrollable: true,
+	},
+	28: {
+		title: "==>",
+		image: imageMap["hunter_2"],
+		scrollable: true,
+	},
+	29: {
+		title: "He Removes His Cloak",
+		image: imageMap["hunter_3"],
+		scrollable: true,
+	},
+	30: {
+		title: "He Removes His Hood",
+		image: imageMap["hunter_4"],
+		scrollable: true,
+	},
+	31: {
+		title: "Time Has Run Out",
+		image: imageMap["hunter_5"],
+		scrollable: true,
 	},
 };
 
